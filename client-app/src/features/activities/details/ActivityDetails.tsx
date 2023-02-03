@@ -14,7 +14,7 @@ export default function ActivityDetails({ activity, cancelSelectActivity, openFo
       <Card.Content>
         <Card.Header>{activity.title}</Card.Header>
         <Card.Meta>
-          <span>{activity.date.toString()}</span>
+          <span>{activity.date}</span>
         </Card.Meta>
         <Card.Description>
           {activity.description}
