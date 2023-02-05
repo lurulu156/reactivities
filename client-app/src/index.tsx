@@ -4,14 +4,17 @@ import 'semantic-ui-css/semantic.min.css';
 import './app/layout/styles.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
+import { store, StoreContex } from './app/stores/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  // <React.StrictMode>
-  <App />
-  // </React.StrictMode>
+  <StoreContex.Provider value={store}>
+    {/*  <React.StrictMode> */}
+    <App />
+    {/*  </React.StrictMode> */}
+  </StoreContex.Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
