@@ -6,6 +6,9 @@
       "dom.iterable",
       "esnext"
     ],
+    "typeRoots": [
+      "node_modules/yup" //solve for cannot find type definition file for 'yup'
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
