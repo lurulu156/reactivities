@@ -1,4 +1,3 @@
-import { upload } from "@testing-library/user-event/dist/upload";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { toast } from 'react-toastify';
 import { Activity, ActivityFormValues } from "../models/activity";
@@ -92,7 +91,9 @@ const Profiles = {
     return axios.post<Photo>('photos', formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
     })
-  }
+  },
+  setMainPhoto: (id: string) => requests.post(`/photos/${id}/setMain`, {}),
+  deletePhoto: (id: string) => requests.del(`/photos/${id}`)
 }
 
 const agent = {
