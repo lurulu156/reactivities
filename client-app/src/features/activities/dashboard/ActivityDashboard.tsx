@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Grid } from "semantic-ui-react";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
 import { useStore } from "../../../app/stores/store";
@@ -10,14 +10,10 @@ export default observer(function ActivityDashboard() {
   const { activityStore } = useStore();
   const { loadActivities, activityRegistry } = activityStore;
 
-
   useEffect(() => {
     if (activityRegistry.size <= 1) loadActivities();
-    if (localStorage.getItem('changePhoto') === '1') loadActivities();
-    localStorage.removeItem('changePhoto')
   }, [activityRegistry.size, loadActivities])
 
-  console.log('photoChange2')
   if (activityStore.loadingInitial) return <LoadingComponent content='Loading activities...' />
 
   return (
