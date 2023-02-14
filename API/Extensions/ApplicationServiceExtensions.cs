@@ -6,6 +6,7 @@ using FluentValidation.AspNetCore;
 using Infrastructure.Photos;
 using Infrastructure.Security;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -27,9 +28,10 @@ namespace API.Extensions
       {
         opt.AddPolicy("CorsPolicy", policy =>
         {
-          policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
+          policy.AllowAnyMethod().AllowAnyHeader().AllowCredentials().WithOrigins("http://localhost:3000");
         });
       });
+
       services.AddMediatR(typeof(List.Handler));
       services.AddAutoMapper(typeof(MappingProfiles).Assembly);
       services.AddFluentValidationAutoValidation();
