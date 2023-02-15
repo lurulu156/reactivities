@@ -17,8 +17,7 @@ export default observer(function FollowButton({ profile }: Props) {
   function handleFollow(e: SyntheticEvent, username: string) {
     e.preventDefault();// prevent card link that wrap this button which will take user away
     profile.following ? updateFollowing(username, false) : updateFollowing(username, true);
-    ;
-  }
+  };
 
   return (
     <Reveal animated='move'>

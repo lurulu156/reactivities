@@ -22,6 +22,7 @@ export default class UserStore {
       runInAction(() => this.user = user);
       router.navigate('/activities');
       store.modalStore.closeModal();
+      store.activityStore.loadActivities();
     } catch (error) {
       throw error;
     }
