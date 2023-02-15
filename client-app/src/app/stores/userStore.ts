@@ -53,7 +53,8 @@ export default class UserStore {
   }
   setImage = (image: string) => {
     if (this.user) this.user.image = image;
-    store.activityStore.loadActivities();
+    store.activityStore.updateAttendeeProfile(this.user!.username);
+    store.activityStore.updateHostImage(this.user!.username);
   }
 
   setDisplayName = (name: string) => {

@@ -185,8 +185,14 @@ export default class ActivityStore {
         if (attendee.username === username) {
           attendee.bio = store.profileStore.profile?.bio
           attendee.displayName = store.profileStore.profile?.displayName!
+          attendee.image = store.userStore.user?.image
         }
       })
+    })
+  }
+  updateHostImage = (username: string) => {
+    this.activityRegistry.forEach(activity => {
+      activity.host!.image = store.userStore.user?.image;
     })
   }
 }
