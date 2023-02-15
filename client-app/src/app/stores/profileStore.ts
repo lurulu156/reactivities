@@ -161,6 +161,7 @@ export default class ProfileStore {
           store.userStore.setDisplayName(profile.displayName);
         }
         this.profile = { ...this.profile, ...profile as Profile };
+        store.activityStore.updateAttendeeProfile(store.userStore.user!.username)
         this.loading = false;
       })
     } catch (error) {
