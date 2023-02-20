@@ -9,6 +9,9 @@ processes = []
   image = "kzzlin9/reactivities:latest"
 
 [env]
+  ASPNETCORE_URLS="http://+:8080"
+  Cloudinary__CloudName="dy9fvet8x"
+  Cloudinary__ApiKey="592851326965575"
 
 [experimental]
   auto_rollback = true
